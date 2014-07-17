@@ -1,32 +1,6 @@
 # This code is written by Marco Chierici and Alessandro Zandona'.
 # Based on code previously written by Davide Albanese.
 # Requires Python >= 2.7, mlpy >= 3.5
-# CHANGELOG
-# 2014-03-12: [AZ] added title to metric plot
-# 2014-02-24: [AZ] added data and labels file paths to log file
-# 2014-02-10: [AZ] added options 'cv_k' and 'cv_n' for the number of CV folds and CV cycles respectively
-# 2014-02-06: [MC] added possibility to parse command line parameters from a configuration file
-# 2014-02-05: [MC] added option 'reliefk' for the number of neighbors to be used in combination with ReliefF
-# 2014-02-05: [MC] moved option for random ranking from boolean flag to positional (RANK_METHOD = 'random')
-# 2014-02-05: [MC] fixed behaviour for random ranking, which now excludes other ranking methods instead of replacing their rankings with a random permutation of indexes
-# 2014-02-05: [MC] added creation of a log file with Python and packages versions
-# 2014-01-09: [AZ] added input parameter to function svmlin_t in order to decide which scaling method (norm L2, standard, minmax) to apply
-# 2013-11-21: [AZ] added input parameter to decide which scaling method (norm L2, standard, minmax) to apply
-# 2013-11-21: [AZ] added function metplot in order to plot one metric over all training cycles
-# 2013-11-20: [MC] added to the ranking file: median values (on all samples), per-class median values and fold-change (computed as median ratio)
-# 2013-11-19: [AZ] renamed io.py in input_output.py (avoiding error while importing matplotlib)
-# 2013-06-20: [CZ] change random label, to single run
-# 2013-06-20: [CZ] added random ranking
-# 2013-04-04: [MC] added: data normalization in place of minmax_scaling
-# 2013-03-25: [MC] added: flag for feature ranking method (SVM, RFE)
-# 2013-03-22: [MC] added: flag for random labels
-# 2013-03-22: [MC] added: save RANKING to file
-# 2013-03-22: [MC] added: stability computation
-# 2013-03-21: [MC] moved SVM tuning OUTSIDE the CV loop
-# 2013-02-27: [MC] added computation of approximated Odds Ratio from average SENS and SPEC
-# 2013-02-27: [MC] rearranged metrics order so to have MCC first, then SENS, SPEC, PPV, NPV, AUC, ACC, OR, OR_APPROX
-# 2013-02-27: [MC] added code comments
-# 2013-02-26: [MC] added output of all metrics for each CV step
 from __future__ import division
 import numpy as np
 import itertools
